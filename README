@@ -29,7 +29,7 @@ que no tienen nombre y están conectados en el dominio indicado
 y utilizando el protocolo especificado.
 
 Argumentos, descripción.
-----------------------
+------------------------
 dominio:(PF_UNIX,  AF_UNIX, PF_LOCAL, AF_LOCAL)
 El dominio: en el que abrir el socket.
 Aunque se pueden obtener pares de sockets para sockets de dominio AF_INET,
