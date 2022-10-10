@@ -1,6 +1,6 @@
 CC          = gcc
 CFLAGS		= -c -Wall -Werror
-LDFLAGS		= -lpcap
+LDFLAGS		= 
 SOURCES		= Socket_Pair.c volcado.c
 INCLUDES	= -I.
 OBJECTS		= $(SOURCES:.c=.o)
