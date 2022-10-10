@@ -1,0 +1,74 @@
+
+*************************************************************************
+              Dulce bellum inexpertis.
+************************************************************************
+            Hilario Iglesias Martínez              
+
+************************************************************************
+                Socket_Pair.c
+----------------------------------------------------------------------
+Este programa fue realizado en una plataforma
+LINUX Ubuntu 20.04.4 LTS.
+Bajo el standard ANSI-C,
+bajo una consola Linux.
+*************************************************************************
+En este programa trataremos la función  socketpair
+que realiza un  mecanismo de comunicación entre procesos,
+muy parecido al de la función pipes.
+La diferencia fundamental con pipes, es que la comunicación
+entre procesos es bidireccional.
+
+                 FUNCIÓN UTILIZADA
+                 ----------------
+Esta función se encuentra en la librería  <sys/socket.h>
+
+ "int socketpair(int domain, int type, int protocol, int sv[2]);"
+
+La función socketpair() crea un par de sockets del tipo especificado
+que no tienen nombre y están conectados en el dominio indicado
+y utilizando el protocolo especificado.
+
+Argumentos, descripción.
+----------------------
+dominio:(PF_UNIX,  AF_UNIX, PF_LOCAL, AF_LOCAL)
+El dominio: en el que abrir el socket.
+Aunque se pueden obtener pares de sockets para sockets de dominio AF_INET,
+se recomienda utilizar sockets de dominio:PF_UNIX, AF_UNIX para pares de sockets.
+
+El tipo: de socket creado, ya sea SOCK_STREAM o SOCK_DGRAM.
+
+Protocolo:El protocolo solicitado debe ser 0.
+
+sv:Array, con los descriptores utilizados
+para referirse a los sockets obtenidos.
+
+Secuencia del programa:
+
+PADRE.
+-----
+Crear un socketpair-->Crear hijo-->Leer mensaje-->Escribir mensaje--> Cerrar
+
+HIJO.
+----
+Escribir mensaje--> Leer mensaje --> Cerrar.
+
+
+-----------------------------------------------------------------
+Para compilar el programa se puede utilizar la utilidad make, adjunta.
+También se puede compilar directamente bajo consola de linux con el comando,
+teniendo en cuenta que:
+Socket_Pair.c
+volcado.c
+variables.h
+deberán estar bajo el mismo directorio.
+ 
+
+gcc -Wall -Werror  -o Socket_Pair Socket_Pair.c  volcado.c
+
+Ejecutar:
+
+./Socket_Pair
+
+
+
+*/
